@@ -10,6 +10,7 @@ export class Tab3Page {
 
   a: number[][] = [];
   n: number = 0;
+  prod = 0;
 
   calc(n: any) {
 
@@ -59,6 +60,14 @@ export class Tab3Page {
 
       }
 
+      this.prod = 1;
+      for (let row: number = 0; row < this.n; row++) {
+        for (let col: number = 0; col < this.n; col++) {
+          if (this.a[row][col] % 2 === 0 && this.a[row][col] != 0) {
+            this.prod *= this.a[row][col];
+          }
+        }
+      }
     } catch (error) {
 
       console.log(error);
@@ -70,6 +79,7 @@ export class Tab3Page {
   getBgColor(b: number) {
     return b % 2 == 0 ? '#428cff' : 'transparent';
   }
+
   getFgColor(b: number) {
     if (b % 2 == 0) {
       return '#fff';

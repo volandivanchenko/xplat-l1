@@ -30,7 +30,7 @@
   <ion-card>
     <ion-card-header>
       <ion-card-title>
-        Результат
+        Результат (таблиця)
       </ion-card-title>
     </ion-card-header>
     <ion-card-content>
@@ -39,6 +39,18 @@
           <ion-col *ngFor="let j of i" [ngStyle]="{'backgroundColor': getBgColor(j), 'color': getFgColor(j)}">{{ j }}</ion-col>
         </ion-row>
       </ion-grid>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        Результат (добуток)
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        {{prod}}
+      </ion-item>
     </ion-card-content>
   </ion-card>
 </ion-content>
