@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Лабораторна робота №4</ion-title>
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="first"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Лабораторні роботи</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">abstractclasspage</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-card>
+    <ion-card-header>
+      <ion-title size="large">Завдання</ion-title>
+      <p>Скласти програму з абстрактним батьківським класом і двома об'єктами – нащадками. <br>
+        Реалізувати циклічне виведення параметрів об'єктів, використовуючи  поліморфний контейнер - масив об'єктів базового класу (кількість об'єктів> = 5).</p>
+      <p>Знайти значення найменшої щільності населення.</p>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-input type="number" value="5" #Inputn></ion-input>
+      <ion-button (click)="ras(Inputn.value)" expand="block">Розрахунок</ion-button>
+      <p *ngFor="let d of dwelling" [ngStyle]='{color: getColor(d.density(), min, "yellow")}'>{{d.show()}}</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
