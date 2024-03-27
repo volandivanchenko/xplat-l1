@@ -6,10 +6,13 @@ export class Village extends Dwelling {
   pph!: number; //people per house
 
   constructor(override name: string, override area: number, house_num: number, pph: number) {
-    super();
+    if (house_num == undefined || house_num <= 0) throw new Error('house_num <= 0')
+    if (pph == undefined || pph <= 0) throw new Error('pph <= 0')
+    super(name, area, house_num * pph);
     this.house_num = house_num;
     this.pph = pph;
     this.population = this.house_num * this.pph;
+    if (this.population > 1000) throw new Error('population > 1000')
   }
 
   density(): any {

@@ -1,10 +1,10 @@
 import {Dwelling} from "./dwelling";
 
-export class City extends Dwelling {
+export class Smt extends Dwelling {
 
   constructor(override name: string, override area: number, override population: number) {
     super(name, area, population);
-    if (this.population < 5000) throw new Error("population < 5000");
+    if ((this.population < 1000) || (this.population > 5000)) throw new Error('not an smt (1000 < population < 5000)')
   }
 
   density(): any {

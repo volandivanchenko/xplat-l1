@@ -2,6 +2,7 @@ import {Component} from '@angular/core';
 import {Dwelling} from "../Class/dwelling";
 import {City} from "../Class/city";
 import {Village} from "../Class/village";
+import {Smt} from "../Class/smt";
 
 @Component({
   selector: 'app-abstractclasspage',
@@ -32,6 +33,7 @@ export class AbstractclasspagePage {
       }
       for (let i = 0; i < n; i++) {
         this.dwelling.push(new Village("Село " + (i + 1), this.getRandomInt(1, 40), this.getRandomInt(3, 35), this.getRandomInt(1, 10)));
+        this.dwelling.push(new Smt("СМТ " + (i + 1), this.getRandomInt(20, 600), this.getRandomInt(1000, 3000000)));
         this.dwelling.push(new City("Місто " + (i + 1), this.getRandomInt(20, 600), this.getRandomInt(1000, 3000000)));
       }
       this.min = -1;
